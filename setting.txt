@@ -1,0 +1,11 @@
+shared_secret=7rMprvRCjg9Z/7T3649r/TPdlcM=
+
+identity_secret=76561198256560683
+
+serial_number=9SiX5JrL03/ky+SMf454baHoaTY=
+
+steam_user=709565591
+
+steam_password=Shi-+123
+
+cookie=
