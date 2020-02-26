@@ -36,6 +36,7 @@ public class Global {
         catch (java.lang.Exception e) {
             e.printStackTrace ();
             try {
+                System.out.print ("\n读取配置失败");
                 System.in.read ();
             }
             catch (java.lang.Exception e1) {

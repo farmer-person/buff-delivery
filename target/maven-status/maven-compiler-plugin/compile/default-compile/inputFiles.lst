@@ -1,3 +1,4 @@
+/home/farmer/farmer-person/buff-delivery/src/main/java/buff/x/Deliver.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/steam/Operation.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/farmer/exception/FarmerException.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/farmer/Log.java
@@ -8,10 +9,15 @@
 /home/farmer/farmer-person/buff-delivery/src/main/java/bean/steam/information/ConfirmationInformation.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/farmer/Http.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/bean/steam/information/UserInformation.java
+/home/farmer/farmer-person/buff-delivery/src/main/java/buff/Global.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/steam/Encryption.java
+/home/farmer/farmer-person/buff-delivery/src/main/java/buff/Confirmation.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/steam/Information.java
+/home/farmer/farmer-person/buff-delivery/src/main/java/buff/Delivering.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/interfaces/steam/Acception.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/steam/auto/Logging.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/steam/Global.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/farmer/Io.java
 /home/farmer/farmer-person/buff-delivery/src/main/java/farmer/Time.java
+/home/farmer/farmer-person/buff-delivery/src/main/java/dota2/Operation.java
+/home/farmer/farmer-person/buff-delivery/src/main/java/dota2/User.java
