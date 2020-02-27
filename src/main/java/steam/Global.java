@@ -53,11 +53,11 @@ public class Global {
             //
             new Thread (new Checking ()).start ();
             properties.load (new java.io.FileInputStream ("setting.txt"));
-            user.setStringSharedSecret (properties.getProperty ("shared_secret"))
-                .setStringIdentitySecret (properties.getProperty ("identity_secret"))
-                .setStringSerialNumber (properties.getProperty ("serial_number"))
-                .setStringSteamUser (properties.getProperty ("steam_user"))
-                .setStringSteamPassword (properties.getProperty ("steam_password"));
+            user.setStringSharedSecret (properties.getProperty ("shared_secret").trim ())
+                .setStringIdentitySecret (properties.getProperty ("identity_secret").trim ())
+                .setStringSerialNumber (properties.getProperty ("serial_number").trim ())
+                .setStringSteamUser (properties.getProperty ("steam_user").trim ())
+                .setStringSteamPassword (properties.getProperty ("steam_password").trim ());
             new Thread (new CheckCookie ()).start ();
         }
         catch (java.lang.Exception e) {
@@ -126,6 +126,7 @@ class CheckCookie implements Runnable {
 
     private void main () {
         steam.Operation.activateCookie (steam.Global.user);
+        System.out.flush ();
         return;
     }
 }

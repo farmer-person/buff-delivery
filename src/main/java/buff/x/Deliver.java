@@ -43,6 +43,7 @@ class XDeliver implements Runnable {
                 throws java.lang.InterruptedException {
         System.out.print ("\n\n");
         System.out.print (java.time.LocalDateTime.now ());
+        System.out.flush ();
         Thread.sleep (1000L * 60);
         // steam确认报价
         new buff.Confirmation ()

@@ -50,7 +50,8 @@ public class Global {
             //
             new Thread (new Checking ()).start ();
             properties.load (new java.io.FileInputStream ("setting.txt"));
-            stringCookie = properties.getProperty ("cookie");
+            stringCookie = properties.getProperty ("cookie")
+                                     .trim ();
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
