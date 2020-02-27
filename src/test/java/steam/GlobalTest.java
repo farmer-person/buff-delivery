@@ -17,6 +17,8 @@ public class GlobalTest {
         System.out.print (steam.Global.stringUserHome);
         System.out.print ("\n");
         System.out.print (steam.Global.user);
+        System.out.print ("\n");
+        System.out.print (steam.Global.stringMachineId);
         return;
     }
 }

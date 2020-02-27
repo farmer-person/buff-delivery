@@ -13,7 +13,7 @@ public class Deliver {
         Class.forName ("buff.Global");
         new Thread (new XDeliver ()).start ();
         while (true) {
-            System.in.read ();
+            Thread.sleep (1000L);
         }
     }
 }
@@ -47,10 +47,12 @@ class XDeliver implements Runnable {
         // steam确认报价
         new buff.Confirmation ()
                 .run ();
+        System.out.flush ();
         Thread.sleep (1000L * 60);
         // dota2开始发货
         new buff.Delivering ()
                 .run ();
+        System.out.flush ();
         return;
     }
 }

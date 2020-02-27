@@ -75,8 +75,8 @@ public class User {
             e.printStackTrace ();
         }
         finally {
-            // System.out.print ("\n[waitingForDelivering]\n");
-            // System.out.print (listStringWaitingForDelivering);
+            System.out.print ("\n[waitingForDelivering]\n");
+            System.out.print (listStringWaitingForDelivering);
             return listStringWaitingForDelivering;
         }
         /*}}}*/
@@ -129,10 +129,7 @@ public class User {
             e.printStackTrace ();
         }
         finally {
-            if (0 < listStringSteamTradeOfferId.size ()) {
-                System.out.print ("\n[steam trade offer id]\n" + listStringSteamTradeOfferId.toString ());
-            }
-            //
+            System.out.print ("\n[steam trade offer id]\n" + listStringSteamTradeOfferId.toString ());
             return listStringSteamTradeOfferId;
         }
         /*}}}*/

@@ -26,7 +26,9 @@ public class Operation {
                         .setStringUrl ("https://steamcommunity.com/")
                         .setStringCookie (user.getStringCookie ())
                         .request ();
-        System.out.print ("\n\n[账号] " + user.getStringSteamUser ());
+        System.out.print ("\n\n");
+        System.out.print (java.time.LocalDateTime.now ());
+        System.out.print ("\n[账号] " + user.getStringSteamUser ());
         if (200 != http.getIntResponseCode ()
               || ! http.getStringResponseBody ().contains (user.getStringIdentitySecret ())) {
             System.out.print ("\n[检查在线状态] false");

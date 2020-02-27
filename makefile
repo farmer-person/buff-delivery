@@ -24,3 +24,8 @@ steam:
 	-XX:+AlwaysPreTouch \
 	-cp target/id-version-jar-with-dependencies.jar \
 	steam.x.Server
+money:
+	echo "\033[32m\n[money]\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m" && \
+	java \
+	-cp target/id-version-jar-with-dependencies.jar \
+	buff.x.Money
