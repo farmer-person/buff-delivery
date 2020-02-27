@@ -1,7 +1,7 @@
 doc:
 	mvn javadoc:javadoc
 build:
-	mvn assembly:assembly
+	mvn assembly:assembly -Dmaven.test.skip=true
 buff:
 	echo "\033[32m\n[buff]\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\033[0m" && \
 	java \
