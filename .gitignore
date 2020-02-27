@@ -1,3 +1,2 @@
 *.swp
-target/
-!target/id-version-jar-with-dependencies.jar
+*.class
