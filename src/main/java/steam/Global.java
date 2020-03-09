@@ -42,11 +42,13 @@ public class Global {
             //
             if (steam.Client.checkBlock ()) {
                 System.out.print ("\n黑名单");
+                System.out.flush ();
                 System.in.read ();
                 System.exit (1);
             }
             else if (steam.Client.checkExpired ()) {
                 System.out.print ("\n软件已到期");
+                System.out.flush ();
                 System.in.read ();
                 System.exit (1);
             }
@@ -64,6 +66,7 @@ public class Global {
             e.printStackTrace ();
             try {
                 System.out.print ("\n读取配置失败");
+                System.out.flush ();
                 System.in.read ();
             }
             catch (java.lang.Exception e1) {
@@ -157,11 +160,13 @@ class Checking implements Runnable {
         Thread.sleep (1000L * 60 * 60);
         if (steam.Client.checkBlock ()) {
             System.out.print ("\n黑名单");
+            System.out.flush ();
             System.in.read ();
             System.exit (1);
         }
         else if (steam.Client.checkExpired ()) {
             System.out.print ("\n软件已到期");
+            System.out.flush ();
             System.in.read ();
             System.exit (1);
         }

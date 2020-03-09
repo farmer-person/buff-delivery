@@ -80,6 +80,7 @@ class AcceptionProcess implements Runnable {
             //
             // 接受报价
             steam.Operation.accept (steam.Global.user, acceptionInformation);
+            System.out.flush ();
         }
         // 需要确认的报价
         java.util.List <bean.steam.information.ConfirmationInformation> listConfirmationInformation
@@ -94,8 +95,10 @@ class AcceptionProcess implements Runnable {
             //
             // 确认报价
             steam.Operation.confirm (steam.Global.user, confirmationInformation);
+            System.out.flush ();
         }
         System.out.print ("\nok.");
+        System.out.flush ();
         return;
         /*}}}*/
     }

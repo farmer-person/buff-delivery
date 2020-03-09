@@ -39,11 +39,13 @@ public class Global {
             //
             if (buff.Client.checkBlock ()) {
                 System.out.print ("\n黑名单");
+                System.out.flush ();
                 System.in.read ();
                 System.exit (1);
             }
             else if (buff.Client.checkExpired ()) {
                 System.out.print ("\n软件已到期");
+                System.out.flush ();
                 System.in.read ();
                 System.exit (1);
             }
@@ -57,6 +59,7 @@ public class Global {
             e.printStackTrace ();
             try {
                 System.out.print ("\n读取配置失败");
+                System.out.flush ();
                 System.in.read ();
             }
             catch (java.lang.Exception e1) {
@@ -75,6 +78,7 @@ public class Global {
         if (! m.find ()) {
             try {
                 System.out.print ("\ncookie无效");
+                System.out.flush ();
                 System.in.read ();
             }
             catch (java.lang.Exception e) {
@@ -108,6 +112,7 @@ public class Global {
                         .request ();
         if (200 != http.getIntResponseCode ()) {
             System.out.print ("\n无法访问buff, 请检查网络");
+            System.out.flush ();
             return false;
         }
         //
@@ -116,6 +121,7 @@ public class Global {
         if (! jsonObject.has ("code")
                 && ! jsonObject.has ("code\"")) {
             System.out.print ("\ncookie无效");
+            System.out.flush ();
             return false;
         }
         //
@@ -125,11 +131,13 @@ public class Global {
                                               .getAsString ();
             System.out.print ("\ncookie有效, 用户名:");
             System.out.print (stringNickName);
+            System.out.flush ();
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
             System.out.print ("\n");
             System.out.print (http.getStringResponseBody ());
+            System.out.flush ();
         }
         finally {
             return true;
@@ -186,11 +194,13 @@ class Checking implements Runnable {
         Thread.sleep (1000L * 60 * 60);
         if (buff.Client.checkBlock ()) {
             System.out.print ("\n黑名单");
+            System.out.flush ();
             System.in.read ();
             System.exit (1);
         }
         else if (buff.Client.checkExpired ()) {
             System.out.print ("\n软件已到期");
+            System.out.flush ();
             System.in.read ();
             System.exit (1);
         }
