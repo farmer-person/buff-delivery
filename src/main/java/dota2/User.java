@@ -73,10 +73,12 @@ public class User {
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
+            System.err.flush ();
         }
         finally {
             System.out.print ("\n[waitingForDelivering]\n");
             System.out.print (listStringWaitingForDelivering);
+            System.out.flush ();
             return listStringWaitingForDelivering;
         }
         /*}}}*/
@@ -127,9 +129,11 @@ public class User {
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
+            System.err.flush ();
         }
         finally {
             System.out.print ("\n[steam trade offer id]\n" + listStringSteamTradeOfferId.toString ());
+            System.out.flush ();
             return listStringSteamTradeOfferId;
         }
         /*}}}*/

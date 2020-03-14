@@ -71,6 +71,7 @@ public class Global {
             }
             catch (java.lang.Exception e1) {
                 e1.printStackTrace ();
+                System.err.flush ();
             }
             finally {
                 System.exit (1);
@@ -120,6 +121,7 @@ class CheckCookie implements Runnable {
             }
             catch (java.lang.Exception e) {
                 e.printStackTrace ();
+                System.err.flush ();
             }
             finally {
                 //
@@ -148,6 +150,7 @@ class Checking implements Runnable {
             }
             catch (java.lang.Exception e) {
                 e.printStackTrace ();
+                System.err.flush ();
             }
             finally {
                 //

@@ -29,13 +29,16 @@ public class Operation {
         System.out.print ("\n\n");
         System.out.print (java.time.LocalDateTime.now ());
         System.out.print ("\n[账号] " + user.getStringSteamUser ());
+        System.out.flush ();
         if (200 != http.getIntResponseCode ()
               || ! http.getStringResponseBody ().contains (user.getStringIdentitySecret ())) {
             System.out.print ("\n[检查在线状态] false");
+            System.out.flush ();
             return false;
         }
         else {
             System.out.print ("\n[检查在线状态] true");
+            System.out.flush ();
             return true;
         }
         //
@@ -79,6 +82,7 @@ public class Operation {
                         .setStringHeader (stringHeader)
                         .request ();
         System.out.print ("\n[接受报价]\n" + http.getStringResponseBody ());
+        System.out.flush ();
         return true;
         /*}}}*/
     }
@@ -120,6 +124,7 @@ public class Operation {
                         .setStringCookie (user.getStringCookie ())
                         .request ();
         System.out.print ("\n[确认报价]\n" + http.getStringResponseBody ());
+        System.out.flush ();
         if (! http.getStringResponseBody ().contains ("success")
               || ! http.getStringResponseBody ().contains ("true")) {
             return false;
@@ -144,6 +149,7 @@ public class Operation {
         finally {
             if (null != driver) {
                 System.out.print ("\n\033[33m关闭浏览器\033[0m\n");
+                System.out.flush ();
                 driver.quit ();
                 driver = null;
             }
@@ -164,8 +170,10 @@ public class Operation {
                                   .append (" | 请求登陆")
                                   .toString ();
         System.out.print (stringPrint);
+        System.out.flush ();
         // 启动浏览器 
         System.out.print ("\n\033[33m启动浏览器\033[0m\n");
+        System.out.flush ();
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities ();
         desiredCapabilities.setCapability ("phantomjs.page.settings.loadImages", false);
         desiredCapabilities.setCapability ("phantomjs.page.settings.javascriptEnabled", true);
@@ -185,19 +193,23 @@ public class Operation {
               .timeouts ()
               .pageLoadTimeout (30, java.util.concurrent.TimeUnit.SECONDS);
         System.out.print ("\n打开登陆页面");
+        System.out.flush ();
         try {
             driver.get ("https://steamcommunity.com/login/home/");
         }
         catch (java.lang.Exception e) {
             System.out.println (driver.getPageSource ());
             e.printStackTrace ();
+            System.err.flush ();
             System.out.print ("\n登陆失败");
+            System.out.flush ();
             return false;
         }
         finally {
             //
         }
         System.out.print ("\n等待页面加载完毕");
+        System.out.flush ();
         Thread.sleep (1000L);
         while (26 < System.currentTimeMillis () % 30L) {
             Thread.sleep (1000L);
@@ -207,6 +219,7 @@ public class Operation {
                                                        System.currentTimeMillis () / 1000L);
         System.out.print ("\n令牌: " + stringToken);
         System.out.print ("\n输入账号和令牌, 登陆");
+        System.out.flush ();
         String stringJS
             = "document.querySelector('#steamAccountName').value='%s';                                  " +
               "document.querySelector('#steamPassword').value='%s';                                     " +
@@ -220,6 +233,7 @@ public class Operation {
         driver.executeScript (stringJS);
         Thread.sleep (5000L);
         System.out.print ("\n读取cookie");
+        System.out.flush ();
         StringBuilder builderCookie = new StringBuilder ();
         for (org.openqa.selenium.Cookie cookie : driver.manage ().getCookies ()) {
             builderCookie.append (cookie.getName ())
@@ -229,12 +243,15 @@ public class Operation {
         }
         String stringCookie = builderCookie.toString ();
         System.out.print ("\n" + stringCookie);
+        System.out.flush ();
         if (! stringCookie.contains ("steamLoginSecure")) {
             System.out.print ("\ncookie无效, 登陆失败");
+            System.out.flush ();
             return false;
         }
         //
         System.out.print ("\n验证cookie是否有效");
+        System.out.flush ();
         // 先保存旧的cookie
         String stringOldCookie = user.getStringCookie ();
         user.setStringCookie (stringCookie);

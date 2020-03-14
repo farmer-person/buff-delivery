@@ -51,6 +51,7 @@ class AcceptionProcess implements Runnable {
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
+            System.err.flush ();
         }
         finally {
             //
@@ -67,6 +68,7 @@ class AcceptionProcess implements Runnable {
                                   .append (steam.Global.user.getStringIdentitySecret ())
                                   .append (" | 已收到请求, 正在处理");
         System.out.print (builderPrint);
+        System.out.flush ();
         // 收到的报价
         java.util.List <bean.steam.information.AcceptionInformation> listAcceptionInformation
             = steam.Information.acception (steam.Global.user);

@@ -67,6 +67,7 @@ public class Operation {
                                        .getAsString ();
                 if (null == builderPrint) {
                     System.out.print ("\n[deliver]\n" + stringResult);
+                    System.out.flush ();
                 }
                 else {
                     builderPrint.append (stringResult);
@@ -81,6 +82,7 @@ public class Operation {
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
+            System.err.flush ();
             return false;
         }
         finally {

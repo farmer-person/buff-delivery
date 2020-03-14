@@ -36,6 +36,7 @@ public class Information {
                         .request ();
         if (200 != http.getIntResponseCode ()) {
             System.out.print ("\nhttp 异常, 无法检查报价");
+            System.out.flush ();
             return listAcceptionInformation;
         }
         //
@@ -52,9 +53,11 @@ public class Information {
         }
         if (http.getStringResponseBody ().contains ("please enter the code below")) {
             System.out.print ("\n需要验证码");
+            System.out.flush ();
         }
         //
         System.out.print ("\n[收到的报价]\n" + listAcceptionInformation.toString ());
+        System.out.flush ();
         return listAcceptionInformation;
         /*}}}*/
     }
@@ -97,6 +100,7 @@ public class Information {
                         .request ();
         if (200 != http.getIntResponseCode ()) {
             System.out.print ("\nhttp 异常, 请求重新登陆");
+            System.out.flush ();
             steam.Operation.login (user);
             return listConfirmationInformation;
         }
@@ -113,6 +117,7 @@ public class Information {
             listConfirmationInformation.add (confirmationInformation);
         }
         System.out.print ("\n[待确认的报价]\n" + listConfirmationInformation.toString ());
+        System.out.flush ();
         return listConfirmationInformation;
         /*}}}*/
     }

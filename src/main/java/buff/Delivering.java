@@ -22,6 +22,7 @@ public class Delivering implements Runnable {
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
+            System.err.flush ();
         }
         finally {
             //

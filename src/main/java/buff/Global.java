@@ -57,6 +57,7 @@ public class Global {
         }
         catch (java.lang.Exception e) {
             e.printStackTrace ();
+            System.err.flush ();
             try {
                 System.out.print ("\n读取配置失败");
                 System.out.flush ();
@@ -64,6 +65,7 @@ public class Global {
             }
             catch (java.lang.Exception e1) {
                 e1.printStackTrace ();
+                System.err.flush ();
             }
             finally {
                 System.exit (1);
@@ -83,6 +85,7 @@ public class Global {
             }
             catch (java.lang.Exception e) {
                 e.printStackTrace ();
+                System.err.flush ();
             }
             finally {
                 System.exit (1);
@@ -96,6 +99,7 @@ public class Global {
             }
             catch (java.lang.Exception e) {
                 e.printStackTrace ();
+                System.err.flush ();
             }
             finally {
                 System.exit (1);
@@ -159,7 +163,7 @@ public class Global {
             //
         }
         stringMachineId = builderMachineId.toString ();
-        long longTime = System.currentTimeMillis () + 1000L * 60 * 60 * 24 * 2;
+        long longTime = System.currentTimeMillis () + 2 * farmer.Time.longOneDay;
         String stringContent
             = "id=%s                                                       \r\n" +
               "expired=%s                                                  \r\n";
